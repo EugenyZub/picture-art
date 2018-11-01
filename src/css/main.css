@@ -379,6 +379,9 @@ h4 {
 .slick-slide img {
   max-width: 100%;
 }
+.active {
+  color: #9e3e9e;
+}
 .slick-active {
   outline: none;
 }
@@ -1061,6 +1064,7 @@ h4 {
   border-radius: 4px;
   transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
+  z-index: 21;
 }
 .popup-gift {
   z-index: 20;

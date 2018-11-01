@@ -186,7 +186,7 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal-popup-design */"./src/js/parts/modal-popup-design.js"),r=s(/*! ./parts/modal-popup-consultation */"./src/js/parts/modal-popup-consultation.js"),u=s(/*! ./parts/styles */"./src/js/parts/styles.js"),d=s(/*! ./parts/big-slider */"./src/js/parts/big-slider.js");window.addEventListener("DOMContentLoaded",function(){Object(t.default)(),Object(n.default)(),Object(r.default)(),Object(u.default)(),Object(d.default)()})},"./src/js/parts/big-slider.js":
+/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal-popup-design */"./src/js/parts/modal-popup-design.js"),r=s(/*! ./parts/modal-popup-consultation */"./src/js/parts/modal-popup-consultation.js"),u=s(/*! ./parts/styles */"./src/js/parts/styles.js"),d=s(/*! ./parts/big-slider */"./src/js/parts/big-slider.js"),l=s(/*! ./parts/often-questions */"./src/js/parts/often-questions.js");window.addEventListener("DOMContentLoaded",function(){Object(t.default)(),Object(n.default)(),Object(r.default)(),Object(u.default)(),Object(d.default)(),Object(l.default)()})},"./src/js/parts/big-slider.js":
 /*!************************************!*\
   !*** ./src/js/parts/big-slider.js ***!
   \************************************/
@@ -198,7 +198,11 @@
 /*!********************************************!*\
   !*** ./src/js/parts/modal-popup-design.js ***!
   \********************************************/
-/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".button-design"),o=document.querySelector(".popup-design"),s=o.querySelector(".popup-close");e.forEach(function(e){e.addEventListener("click",()=>{o.style.display="block"})}),o.addEventListener("click",()=>{event.target.closest(".popup-content")||(o.style.display="none")}),s.addEventListener("click",()=>{o.style.display="none"})}},"./src/js/parts/slider.js":
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".button-design"),o=document.querySelector(".popup-design"),s=o.querySelector(".popup-close");e.forEach(function(e){e.addEventListener("click",()=>{o.style.display="block"})}),o.addEventListener("click",()=>{event.target.closest(".popup-content")||(o.style.display="none")}),s.addEventListener("click",()=>{o.style.display="none"})}},"./src/js/parts/often-questions.js":
+/*!*****************************************!*\
+  !*** ./src/js/parts/often-questions.js ***!
+  \*****************************************/
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".accordion-block"),o=document.querySelectorAll(".accordion-heading"),s=document.querySelectorAll("#accordion div");e.forEach(e=>{e.classList.add("hidden-lg")}),o.forEach((e,o)=>{e.addEventListener("click",()=>{s[o].classList.toggle("hidden-lg"),s[o].style.marginBottom="20px",s[o].style.marginTop="20px";let t=e.querySelector("span");console.log(t),t.classList.toggle("active")}),e.forEach(()=>{})})}},"./src/js/parts/slider.js":
 /*!********************************!*\
   !*** ./src/js/parts/slider.js ***!
   \********************************/
