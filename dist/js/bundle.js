@@ -186,10 +186,10 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal */"./src/js/parts/modal.js");window.addEventListener("DOMContentLoaded",function(){Object(t.default)(),Object(n.default)()})},"./src/js/parts/modal.js":
-/*!*******************************!*\
-  !*** ./src/js/parts/modal.js ***!
-  \*******************************/
+/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal-popup-design */"./src/js/parts/modal-popup-design.js");window.addEventListener("DOMContentLoaded",function(){Object(t.default)(),Object(n.default)()})},"./src/js/parts/modal-popup-design.js":
+/*!********************************************!*\
+  !*** ./src/js/parts/modal-popup-design.js ***!
+  \********************************************/
 /*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".button-design"),o=document.querySelector(".popup-design"),s=o.querySelector(".popup-close");e.forEach(function(e){e.addEventListener("click",()=>{o.style.display="block"})}),o.addEventListener("click",function(){event.target.closest(".popup-content")||(o.style.display="none")}),s.addEventListener("click",()=>{o.style.display="none"})}},"./src/js/parts/slider.js":
 /*!********************************!*\
   !*** ./src/js/parts/slider.js ***!
