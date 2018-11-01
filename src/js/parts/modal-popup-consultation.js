@@ -1,6 +1,6 @@
-function modalpopupdesign() {
-    let buttonDesign = document.querySelectorAll('.button-design'),
-        modal = document.querySelector('.popup-design'), //подложка
+function modalPopupConsultation() {
+    let buttonDesign = document.querySelectorAll('.button-consultation'),
+        modal = document.querySelector('.popup-consultation'), //подложка
         close = modal.querySelector('.popup-close'); // кнопка закрыть
 
     buttonDesign.forEach(function (elem) {
@@ -20,4 +20,4 @@ function modalpopupdesign() {
     });
 }
 
-export default modalpopupdesign;
+export default modalPopupConsultation;
