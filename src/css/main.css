@@ -209,31 +209,25 @@ h4 {
   background-color: #f7e7e6;
   padding-top: 3rem;
   /* Making it beautiful */
-
 }
 .main .file_uplo {
   position: relative;
   overflow: hidden;
   font-size: 1em;
   /* example */
-
   height: 4em;
   /* example */
-
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .main .file_uplo > button {
   float: right;
   width: 8em;
   /* example */
-
   height: 100%;
 }
 .main .file_uplo > div {
   padding-left: 1em;
   /* example */
-
 }
 .main .file_uplo input[type=file] {
   position: absolute;
@@ -244,10 +238,8 @@ h4 {
   transform: scale(20);
   letter-spacing: 10em;
   /* IE 9 fix */
-
   -ms-transform: scale(20);
   /* IE 9 fix */
-
   opacity: 0;
   cursor: pointer;
 }
@@ -491,7 +483,6 @@ h4 {
 .calc {
   padding: 8rem 0 4rem 0;
   /* Making it beautiful */
-
 }
 .calc h2,
 .calc .p-heading {
@@ -551,23 +542,18 @@ h4 {
   overflow: hidden;
   font-size: 1em;
   /* example */
-
   height: 4em;
   /* example */
-
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .calc .file_upload > button {
   float: right;
   width: 8em;
   /* example */
-
   height: 100%;
 }
 .calc .file_upload > div {
-  padding-left: 1em /* example */
-;
+  padding-left: 1em /* example */;
 }
 .calc .file_upload input[type=file] {
   position: absolute;
@@ -578,10 +564,8 @@ h4 {
   transform: scale(20);
   letter-spacing: 10em;
   /* IE 9 fix */
-
   -ms-transform: scale(20);
   /* IE 9 fix */
-
   opacity: 0;
   cursor: pointer;
 }
@@ -847,7 +831,7 @@ h4 {
   position: absolute;
   bottom: -3rem;
   left: 15rem;
-  z-index: 1000000;
+  z-index: 19;
 }
 .feedback-block .button-order:before {
   content: '';
@@ -1136,7 +1120,6 @@ h4 {
   height: 100%;
   background-color: rgba(178, 80, 188, 0.8);
   /* Making it beautiful */
-
 }
 .popup-design input[name="name"] {
   margin-top: 2rem;
@@ -1146,24 +1129,19 @@ h4 {
   overflow: hidden;
   font-size: 1em;
   /* example */
-
   height: 4em;
   /* example */
-
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .popup-design .file_uploa > button {
   float: right;
   width: 8em;
   /* example */
-
   height: 100%;
 }
 .popup-design .file_uploa > div {
   padding-left: 1em;
   /* example */
-
 }
 .popup-design .file_uploa input[type=file] {
   position: absolute;
@@ -1174,10 +1152,8 @@ h4 {
   transform: scale(20);
   letter-spacing: 10em;
   /* IE 9 fix */
-
   -ms-transform: scale(20);
   /* IE 9 fix */
-
   opacity: 0;
   cursor: pointer;
 }

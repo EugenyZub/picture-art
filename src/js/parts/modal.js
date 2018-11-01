@@ -1,13 +1,23 @@
 function modal() {
-    let buttonOrder = document.querySelectorAll('.button-order');
-    let modal= document.querySelector('.popup-design');
-    console.log(buttonOrder);
+    let buttonDesign = document.querySelectorAll('.button-design'),
+        modal = document.querySelector('.popup-design'), //подложка
+        close = modal.querySelector('.popup-close'); // кнопка закрыть
 
-    buttonOrder.addEventListener('click', ()=> {
-        modal.display.style = 'block';
+    buttonDesign.forEach(function (elem) {
+        elem.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
     });
-    
 
+    modal.addEventListener('click', function () {
+        if(!event.target.closest('.popup-content')) {
+            modal.style.display = 'none';
+        }        
+    });
+
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 }
 
 export default modal;
