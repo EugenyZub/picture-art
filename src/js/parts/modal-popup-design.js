@@ -1,7 +1,7 @@
 function modalpopupdesign() {
     let buttonDesign = document.querySelectorAll('.button-design'),
-        modal = document.querySelector('.popup-design'), //подложка
-        close = modal.querySelector('.popup-close'); // кнопка закрыть
+        modal = document.querySelector('.popup-design'),
+        close = modal.querySelector('.popup-close');
 
     buttonDesign.forEach(function (elem) {
         elem.addEventListener('click', () => {
@@ -9,7 +9,7 @@ function modalpopupdesign() {
         });
     });
 
-    modal.addEventListener('click', function () {
+    modal.addEventListener('click', ()=> {
         if(!event.target.closest('.popup-content')) {
             modal.style.display = 'none';
         }        

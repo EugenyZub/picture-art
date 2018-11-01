@@ -1,15 +1,15 @@
 function modalPopupConsultation() {
-    let buttonDesign = document.querySelectorAll('.button-consultation'),
-        modal = document.querySelector('.popup-consultation'), //подложка
-        close = modal.querySelector('.popup-close'); // кнопка закрыть
+    let buttonConsultation = document.querySelectorAll('.button-consultation'),
+        modal = document.querySelector('.popup-consultation'),
+        close = modal.querySelector('.popup-close'); 
 
-    buttonDesign.forEach(function (elem) {
+    buttonConsultation.forEach(function (elem) {
         elem.addEventListener('click', () => {
             modal.style.display = 'block';
         });
     });
 
-    modal.addEventListener('click', function () {
+    modal.addEventListener('click', ()=> {
         if(!event.target.closest('.popup-content')) {
             modal.style.display = 'none';
         }        
