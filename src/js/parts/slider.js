@@ -24,7 +24,7 @@ function slider() {
     setTimeout(function run() {
         showSlides(slideIndex += 1); 
         setTimeout(run, 3000);
-      }, 3000);
+    }, 3000);
 }
 
 export default slider;
