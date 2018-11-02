@@ -7,6 +7,7 @@ import oftenQuestions from './parts/often-questions';
 import calc from './parts/calc';
 import filter from './parts/filter';
 import giftModal from './parts/gift-modal';
+//import visitingModal from './parts/visiting-modal';
 
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
@@ -20,4 +21,5 @@ window.addEventListener('DOMContentLoaded', function() {
     moreStyles();
     oftenQuestions();
     slider();   
+    //visitingModal();
 });
