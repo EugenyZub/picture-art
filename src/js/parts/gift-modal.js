@@ -1,13 +1,12 @@
 function giftModal() {
     let giftBtn = document.querySelector('.fixed-gift'),
         popupGift = document.querySelector('.popup-gift'),
-        close = popupGift.querySelector('.popup-close'),
-        toDeleteGiftBtn = document.querySelector('.infinite');
+        close = popupGift.querySelector('.popup-close');
 
     giftBtn.addEventListener('click', ()=> {
         popupGift.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        toDeleteGiftBtn.classList.remove('fixed-gift');
+        giftBtn.parentNode.removeChild(giftBtn);
     });
 
     popupGift.addEventListener('click', ()=> {
