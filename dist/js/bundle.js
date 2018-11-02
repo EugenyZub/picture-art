@@ -202,7 +202,7 @@
 /*!*****************************************!*\
   !*** ./src/js/parts/often-questions.js ***!
   \*****************************************/
-/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".accordion-block"),o=document.querySelectorAll(".accordion-heading"),s=document.querySelectorAll("#accordion div");e.forEach(e=>{e.classList.add("hidden-lg")}),o.forEach((t,n)=>{let r=t.querySelector("span");t.addEventListener("click",()=>{s[n].classList.toggle("hidden-lg"),s[n].style.marginBottom="20px",s[n].style.marginTop="20px";let t=n;r.classList.toggle("active"),e.forEach((e,s)=>{s!=t&&(e.classList.add("hidden-lg"),(r=o[s].querySelector("span")).classList.remove("active"))})})})}},"./src/js/parts/slider.js":
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=document.querySelectorAll(".accordion-block"),o=document.querySelectorAll(".accordion-heading"),s=document.querySelectorAll("#accordion div");e.forEach(e=>{e.classList.add("hidden-lg")}),o.forEach((t,n)=>{let r=t.querySelector("span");t.addEventListener("click",()=>{s[n].classList.toggle("hidden-lg"),s[n].style.marginBottom="20px",s[n].style.marginTop="20px";let t=n;(r=o[t].querySelector("span")).classList.toggle("active"),e.forEach((e,s)=>{s!=t&&(e.classList.add("hidden-lg"),(r=o[s].querySelector("span")).classList.remove("active"))})})})}},"./src/js/parts/slider.js":
 /*!********************************!*\
   !*** ./src/js/parts/slider.js ***!
   \********************************/

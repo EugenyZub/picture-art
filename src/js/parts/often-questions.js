@@ -16,14 +16,15 @@ function oftenQuestions() {
             accordion[index].style.marginBottom = '20px';
             accordion[index].style.marginTop = '20px';
             let curentIndex = index;
+            accordionHeadingSpan = accordionHeading[curentIndex].querySelector('span');
             accordionHeadingSpan.classList.toggle('active');
-           
+
             accordionBlock.forEach((elem3, index2)=> {
                 if(index2 != curentIndex) {
                     elem3.classList.add('hidden-lg');
                     accordionHeadingSpan = accordionHeading[index2].querySelector('span');
                     accordionHeadingSpan.classList.remove('active');    
-                }  
+                }
             });
         });   
     });  
