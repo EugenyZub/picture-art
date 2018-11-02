@@ -18,7 +18,6 @@ function slider() {
         });
 
         slides[slideIndex - 1].style.display = 'block';
-
     }
     
     setTimeout(function run() {
