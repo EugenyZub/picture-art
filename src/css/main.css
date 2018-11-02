@@ -382,6 +382,17 @@ h4 {
 .active {
   color: #c51abb;
 }
+@keyframes acordion-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+.active-accordion {
+  animation: acordion-animation 2s ease-in-out;
+}
 .slick-active {
   outline: none;
 }
