@@ -7,20 +7,19 @@ function giftModal() {
     giftBtn.addEventListener('click', ()=> {
         popupGift.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        toDeleteGiftBtn.classList.remove('fixed-gift');
     });
 
     popupGift.addEventListener('click', ()=> {
         if(!event.target.closest('.popup-content')) {
             popupGift.style.display = 'none';
             document.body.style.overflow = '';
-            toDeleteGiftBtn.classList.remove('fixed-gift');
         }        
     });
 
     close.addEventListener('click', () => {
         popupGift.style.display = 'none';
         document.body.style.overflow = '';
-        toDeleteGiftBtn.classList.remove('fixed-gift');
     });
 }
 

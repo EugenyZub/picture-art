@@ -202,7 +202,7 @@
 /*!************************************!*\
   !*** ./src/js/parts/gift-modal.js ***!
   \************************************/
-/*! exports provided: default */function(e,o,s){"use strict";s.r(o),o.default=function(){let e=document.querySelector(".fixed-gift"),o=document.querySelector(".popup-gift"),s=o.querySelector(".popup-close"),t=document.querySelector(".infinite");e.addEventListener("click",()=>{o.style.display="block",document.body.style.overflow="hidden"}),o.addEventListener("click",()=>{event.target.closest(".popup-content")||(o.style.display="none",document.body.style.overflow="",t.classList.remove("fixed-gift"))}),s.addEventListener("click",()=>{o.style.display="none",document.body.style.overflow="",t.classList.remove("fixed-gift")})}},"./src/js/parts/modal-popup-consultation.js":
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o),o.default=function(){let e=document.querySelector(".fixed-gift"),o=document.querySelector(".popup-gift"),s=o.querySelector(".popup-close"),t=document.querySelector(".infinite");e.addEventListener("click",()=>{o.style.display="block",document.body.style.overflow="hidden",t.classList.remove("fixed-gift")}),o.addEventListener("click",()=>{event.target.closest(".popup-content")||(o.style.display="none",document.body.style.overflow="")}),s.addEventListener("click",()=>{o.style.display="none",document.body.style.overflow=""})}},"./src/js/parts/modal-popup-consultation.js":
 /*!**************************************************!*\
   !*** ./src/js/parts/modal-popup-consultation.js ***!
   \**************************************************/
