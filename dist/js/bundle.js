@@ -194,7 +194,7 @@
 /*!******************************!*\
   !*** ./src/js/parts/calc.js ***!
   \******************************/
-/*! exports provided: default */function(e,o,s){"use strict";s.r(o),o.default=function(){}},"./src/js/parts/modal-popup-consultation.js":
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o),o.default=function(){document.getElementById("size"),document.getElementById("material"),document.getElementById("options"),document.querySelector(".promocode"),document.querySelector(".calc-price"),document.querySelector("#price")}},"./src/js/parts/modal-popup-consultation.js":
 /*!**************************************************!*\
   !*** ./src/js/parts/modal-popup-consultation.js ***!
   \**************************************************/

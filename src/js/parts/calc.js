@@ -10,8 +10,15 @@
 //             доставка: + 1000
 function calc() {
     let picturePrice = 1000,
-        material = 1500,
-        additionalServices = 1000;
+        materialPrice = 1500,
+        additionalServicesPrice = 1000,
+        size = document.getElementById('size'),
+        material = document.getElementById('material'),
+        options = document.getElementById('options'),
+        promocode = document.querySelector('.promocode'),
+        finalPrice = document.querySelector('.calc-price'),
+        buttonCalcPrice = document.querySelector('#price');
+
 //получить все элементы из селекотора размеров
 //получить все элементы из селекотора материалов
 //получить все элементы из селекотора доп. услуг
