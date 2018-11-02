@@ -186,11 +186,15 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal-popup-design */"./src/js/parts/modal-popup-design.js"),r=s(/*! ./parts/modal-popup-consultation */"./src/js/parts/modal-popup-consultation.js"),u=s(/*! ./parts/styles */"./src/js/parts/styles.js"),d=s(/*! ./parts/big-slider */"./src/js/parts/big-slider.js"),l=s(/*! ./parts/often-questions */"./src/js/parts/often-questions.js");window.addEventListener("DOMContentLoaded",function(){Object(t.default)(),Object(n.default)(),Object(r.default)(),Object(u.default)(),Object(d.default)(),Object(l.default)()})},"./src/js/parts/big-slider.js":
+/*! no exports provided */function(e,o,s){"use strict";s.r(o);var t=s(/*! ./parts/slider */"./src/js/parts/slider.js"),n=s(/*! ./parts/modal-popup-design */"./src/js/parts/modal-popup-design.js"),r=s(/*! ./parts/modal-popup-consultation */"./src/js/parts/modal-popup-consultation.js"),u=s(/*! ./parts/styles */"./src/js/parts/styles.js"),d=s(/*! ./parts/big-slider */"./src/js/parts/big-slider.js"),l=s(/*! ./parts/often-questions */"./src/js/parts/often-questions.js"),c=s(/*! ./parts/calc */"./src/js/parts/calc.js");window.addEventListener("DOMContentLoaded",function(){Object(d.default)(),Object(c.default)(),Object(n.default)(),Object(r.default)(),Object(u.default)(),Object(l.default)(),Object(t.default)()})},"./src/js/parts/big-slider.js":
 /*!************************************!*\
   !*** ./src/js/parts/big-slider.js ***!
   \************************************/
-/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=1,o=document.querySelectorAll(".feedback-slider-item"),s=document.querySelector(".main-prev-btn"),t=document.querySelector(".main-next-btn");function n(s){s>o.length&&(e=1),s<1&&(e=o.length),o.forEach(e=>{e.style.display="none"}),o[e-1].style.display="block"}function r(o){n(e+=o)}n(e),s.addEventListener("click",()=>{r(-1)}),t.addEventListener("click",()=>{r(1)}),setTimeout(function o(){n(e+=1),setTimeout(o,2e4)},2e4)}},"./src/js/parts/modal-popup-consultation.js":
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o);s(/*! core-js/modules/web.dom.iterable */"./node_modules/core-js/modules/web.dom.iterable.js");o.default=function(){let e=1,o=document.querySelectorAll(".feedback-slider-item"),s=document.querySelector(".main-prev-btn"),t=document.querySelector(".main-next-btn");function n(s){s>o.length&&(e=1),s<1&&(e=o.length),o.forEach(e=>{e.style.display="none"}),o[e-1].style.display="block"}function r(o){n(e+=o)}n(e),s.addEventListener("click",()=>{r(-1)}),t.addEventListener("click",()=>{r(1)}),setTimeout(function o(){n(e+=1),setTimeout(o,2e4)},2e4)}},"./src/js/parts/calc.js":
+/*!******************************!*\
+  !*** ./src/js/parts/calc.js ***!
+  \******************************/
+/*! exports provided: default */function(e,o,s){"use strict";s.r(o),o.default=function(){}},"./src/js/parts/modal-popup-consultation.js":
 /*!**************************************************!*\
   !*** ./src/js/parts/modal-popup-consultation.js ***!
   \**************************************************/

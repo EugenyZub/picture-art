@@ -1,4 +1,4 @@
-function modalpopupdesign() {
+function modalPopupDesign() {
     let buttonDesign = document.querySelectorAll('.button-design'),
         modal = document.querySelector('.popup-design'),
         close = modal.querySelector('.popup-close');
@@ -20,4 +20,4 @@ function modalpopupdesign() {
     });
 }
 
-export default modalpopupdesign;
+export default modalPopupDesign;
