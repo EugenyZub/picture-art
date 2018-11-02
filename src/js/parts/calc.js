@@ -12,20 +12,57 @@ function calc() {
     let picturePrice = 1000,
         materialPrice = 1500,
         additionalServicesPrice = 1000,
-        size = document.getElementById('size'),
+
+        size = document.querySelector('#size'),
+        //sizeOptions = document.querySelectorAll('#size option'),
         material = document.getElementById('material'),
         options = document.getElementById('options'),
         promocode = document.querySelector('.promocode'),
+
         finalPrice = document.querySelector('.calc-price'),
         buttonCalcPrice = document.querySelector('#price');
+    
 
-//получить все элементы из селекотора размеров
-//получить все элементы из селекотора материалов
-//получить все элементы из селекотора доп. услуг
-//получить промокод, если введён
-//получить внутренность цветного поля для вывода туда результата
+    size.addEventListener('click', (elem)=> {
 
+        elem.forEach(()=> {
+            let sizeOptions = size.selectedOptions;
+            console.log(sizeOptions);
+            //let curentIndex = 0;
 
+            if (sizeOptions == 0) {
+                finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины'; 
+            }
+
+            if(i == 1) {
+            console.log(111);
+            }
+        });
+            
+            
+            
+            
+            
+            
+
+            //let sizeOptions = size.querySelectorAll('option');
+            //console.log(sizeOptions);          
+            // sizeOptions.forEach((elem, index)=> {
+                
+            //     elem.addEventListener('click', ()=> {
+            //         console.log(sizeOptions.selectedOptions);
+            //         if(index == 1) {    
+                        
+            //             finalPrice.textContent = picturePrice;
+            //         } else {
+            //             finalPrice.textContent = '';
+            //             finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+            //         }
+            //     });
+            // });
+            
+    //console.log(size);
+    });
 }
 
 export default calc;
