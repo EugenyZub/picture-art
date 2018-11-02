@@ -6,6 +6,7 @@ import bigSlider from './parts/big-slider';
 import oftenQuestions from './parts/often-questions';
 import calc from './parts/calc';
 import filter from './parts/filter';
+import giftModal from './parts/gift-modal';
 
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
@@ -13,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
     bigSlider();
     calc();
     filter();
+    giftModal();
     modalPopupDesign(); 
     modalPopupConsultation();
     moreStyles();
