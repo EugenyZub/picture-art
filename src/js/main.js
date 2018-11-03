@@ -7,6 +7,7 @@ import oftenQuestions from './parts/often-questions';
 import calc from './parts/calc';
 import filter from './parts/filter';
 import giftModal from './parts/gift-modal';
+//import scroll from './parts/page-scroll';
 //import visitingModal from './parts/visiting-modal';
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
     modalPopupConsultation();
     moreStyles();
     oftenQuestions();
+    //scroll();
     slider();   
     //visitingModal();
 });
