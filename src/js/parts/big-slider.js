@@ -34,9 +34,9 @@ function bigSlider() {
         plusSlides(1);
     });
 
-    setTimeout(function run() {
+    setTimeout(function runSlider() {
         showFeedbackSlides(slideIndex += 1); 
-        setTimeout(run, 20000);
+        setTimeout(runSlider, 20000);
     }, 20000);
 }
 

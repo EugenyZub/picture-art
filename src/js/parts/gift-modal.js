@@ -2,7 +2,7 @@ function giftModal() {
     let giftBtn = document.querySelector('.fixed-gift'),
         popupGift = document.querySelector('.popup-gift'),
         close = popupGift.querySelector('.popup-close');
-
+        console.log(document.body.scrollTop); 
     giftBtn.addEventListener('click', ()=> {
         popupGift.style.display = 'block';
         document.body.style.overflow = 'hidden';
