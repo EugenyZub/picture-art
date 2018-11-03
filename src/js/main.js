@@ -8,6 +8,7 @@ import calc from './parts/calc';
 import filter from './parts/filter';
 import giftModal from './parts/gift-modal';
 import menu from './parts/menu';
+import resizePictures from './parts/pictures-with-different-size';
 
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
@@ -21,5 +22,6 @@ window.addEventListener('DOMContentLoaded', function() {
     modalPopupConsultation();
     moreStyles();
     oftenQuestions();
+    resizePictures();
     slider();   
 });
