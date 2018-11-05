@@ -9,6 +9,7 @@ import filter from './parts/filter';
 import giftModal from './parts/gift-modal';
 import menu from './parts/menu';
 import resizePictures from './parts/pictures-with-different-size';
+import modalForm from './parts/form';
 
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
     filter();
     giftModal();
     menu();
+    modalForm();
     modalPopupDesign(); 
     modalPopupConsultation();
     moreStyles();

@@ -666,8 +666,8 @@
 				<h4>Остались вопросы? Закажите обратный звонок</h4>
 				<div class=main-form>
 					<form class=form action=mailer/smart.php method=POST>
-						<input type=text name=name placeholder="Ваше имя" required>
-						<input type=text name=phone placeholder="Ваш телефон" required>
+						<input id="consultation-name" type=text name=name placeholder="Ваше имя" required>
+						<input id="consultation-phone" type=text name=phone placeholder="Ваш телефон" required>
 						<button class="button button-order" onclick="yaCounter46630539.reachGoal('btn-consultation'); return true;">Получить консультацию</button>
 					</form>
 				</div>
@@ -697,9 +697,9 @@
 					</div>
 					<div class=main-form>
 						<div class=form>
-							<input type=text name=name placeholder="Ваше имя" required>
-							<input type=text name=phone placeholder="Ваш телефон" required>
-							<input type=text name=email placeholder="Ваш e-mail">
+							<input id="design-name" type=text name=name placeholder="Ваше имя" required>
+							<input id="design-phone" type=text name=phone placeholder="Ваш телефон" required>
+							<input id="email" type=text name=email placeholder="Ваш e-mail">
 							<textarea name=message placeholder=Комментарий rows=2></textarea>
 							<button class="button button-order">Отправить дизайнеру</button>
 						</div>
