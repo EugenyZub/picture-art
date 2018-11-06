@@ -8,40 +8,56 @@ function modalForm() {
     let popupDesignForm = document.querySelector('.popup-design form'),
         nameToDesign = popupDesignForm.querySelector('#design-name'),
         phoneToDesign = popupDesignForm.querySelector('#design-phone'),
-        emailToDeign = popupDesignForm.querySelector('#design-email'),
         popupConsultationForm = document.querySelector('.popup-consultation form'),
         nameToConsultation = popupConsultationForm.querySelector('#consultation-name'),
         phoneToConsultation = popupConsultationForm.querySelector('#consultation-phone'),
+        textareaDisign = document.querySelector('#textarea'),
+        statusMessage = document.createElement('div'),
 
-        statusMessage = document.createElement('div');
+        afterConsultationModal = document.querySelector('.popup-consultation .popup-content'),
+        headerConsultationModal = document.querySelector('.popup-consultation h4'),
+        inputsConsultationModal = document.querySelector('.popup-consultation .main-form'),
+
+        afterDesignModal = document.querySelector('.popup-design .popup-content'),
+        headerDesignModal = document.querySelector('.popup-design h4'),
+        uploadDesignModal = document.querySelector('.popup-design .file_uploa'),
+        inputsDesignModal = document.querySelector('.popup-design .main-form');
+
 
     numbers(phoneToDesign);
     numbers(phoneToConsultation);
 
-    function sendDesignForm(elem) {
+    russianLetters(nameToDesign);
+    russianLetters(nameToConsultation);
+    russianLetters(textareaDisign);
+
+    function sendDesignForm(elem, modalWindow, modalHeader, modalInputs) {
         elem.addEventListener('submit', function (e) {
             e.preventDefault();
-            elem.appendChild(statusMessage);
+            modalWindow.appendChild(statusMessage);
             let contactFormData = new FormData(elem);
-
-            //Очищение инпута формы после ввода отправки данных
-            // function clearInputs() {
-            //     for (let i = 0; i < input.length; i++) {
-            //         input[i].value = '';
-            //     }
-            // }
 
             postData(contactFormData)
                 .then(() => statusMessage.innerHTML = message.loading)
                 .then(() => {
-                    statusMessage.innerHTML = message.success;
+                    if(elem == popupConsultationForm) {
+                        modalInputs.style.display = 'none';
+                        modalHeader.style.display = 'none';
+                    } else {
+                        modalInputs.style.display = 'none';
+                        modalHeader.style.display = 'none';
+                        uploadDesignModal.style.display = 'none';
+                    }
+                    statusMessage.innerHTML = message.success;  
+                    
                 })
                 .catch(() => statusMessage.innerHTML = message.failure);
-                //.then(clearInputs);
         });
     }
 
-    sendDesignForm(popupConsultationForm);
+    sendDesignForm(popupConsultationForm, afterConsultationModal, headerConsultationModal, inputsConsultationModal);
+    sendDesignForm(popupDesignForm, afterDesignModal, headerDesignModal, inputsDesignModal);
+
     //Только цифры и знак +
     function numbers(value) {
         value.addEventListener('keypress', function () {
@@ -50,6 +66,16 @@ function modalForm() {
                 that.value = that.value.replace(/[a-zA-z]|[а-яА-Я]/g, '');
                 that.value = that.value.replace(/[0-9][+]/g, that.value.substr(that.value.length), '');
                 that.value = that.value.replace(/[+][+]/g, that.value.substr(that.value.length), '');
+            }, 0);
+        });
+    }
+
+    //Только русские буквы
+    function russianLetters(value) {
+        value.addEventListener('keypress', function () {
+            let that = this;
+            setTimeout(function () {
+                that.value = that.value.replace(/[^а-яА-ЯЁё ]/g, '');
             }, 0);
         });
     }
@@ -76,16 +102,6 @@ function modalForm() {
             request.send(data);
         });
     }
-
-    // console.log(popupDesignForm);
-    // console.log(nameToDesign);
-    // console.log(phoneToDesign);
-    // console.log(emailToDeign);
-
-    // console.log(popupConsultationForm);
-    // console.log(nameToConsultation);
-    // console.log(phoneToConsultation);
-
 }   
 
 export default modalForm;
