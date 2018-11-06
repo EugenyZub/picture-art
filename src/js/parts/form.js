@@ -12,24 +12,35 @@ function modalForm() {
         nameToConsultation = popupConsultationForm.querySelector('#consultation-name'),
         phoneToConsultation = popupConsultationForm.querySelector('#consultation-phone'),
         textareaDisign = document.querySelector('#textarea'),
-        statusMessage = document.createElement('div'),
+        statusMessage = document.createElement('div');
 
-        afterConsultationModal = document.querySelector('.popup-consultation .popup-content'),
+    let afterConsultationModal = document.querySelector('.popup-consultation .popup-content'),
         headerConsultationModal = document.querySelector('.popup-consultation h4'),
-        inputsConsultationModal = document.querySelector('.popup-consultation .main-form'),
+        inputsConsultationModal = document.querySelector('.popup-consultation .main-form');
 
-        afterDesignModal = document.querySelector('.popup-design .popup-content'),
+    let afterDesignModal = document.querySelector('.popup-design .popup-content'),
         headerDesignModal = document.querySelector('.popup-design h4'),
         uploadDesignModal = document.querySelector('.popup-design .file_uploa'),
-        inputsDesignModal = document.querySelector('.popup-design .main-form');
+        inputsDesignModal = document.querySelector('.popup-design .main-form'),
 
+        afterconsultationSection = document.querySelector('.consultation'),
+        consultationWrapper = document.querySelector('.consultation .col-md-offset-1'),
+        consultationForm = document.querySelector('.consultation form'),
+        consultationName = document.querySelector('#consult-name'),
+        consultationPhone = document.querySelector('#consult-phone'),
+        consultationQuestion = document.querySelector('.consultation form .input-text'),
+        consultationParagraph = document.querySelector('.consultation .p-heading'), 
+        consultationHeader = document.querySelector('.consultation h2');
 
     numbers(phoneToDesign);
     numbers(phoneToConsultation);
+    numbers(consultationPhone);
 
     russianLetters(nameToDesign);
     russianLetters(nameToConsultation);
     russianLetters(textareaDisign);
+    russianLetters(consultationName);
+    russianLetters(consultationQuestion);
 
     function sendDesignForm(elem, modalWindow, modalHeader, modalInputs) {
         elem.addEventListener('submit', function (e) {
@@ -40,14 +51,21 @@ function modalForm() {
             postData(contactFormData)
                 .then(() => statusMessage.innerHTML = message.loading)
                 .then(() => {
-                    if(elem == popupConsultationForm) {
+                    if (elem == popupConsultationForm) {
                         modalInputs.style.display = 'none';
                         modalHeader.style.display = 'none';
-                    } else {
+                    } else if (elem == popupDesignForm) {
                         modalInputs.style.display = 'none';
                         modalHeader.style.display = 'none';
                         uploadDesignModal.style.display = 'none';
+                    } else if (elem == consultationForm) {
+                        modalHeader.style.display = 'none';
+                        modalInputs.style.display = 'none';
+                        consultationWrapper.classList.add('hidden-lg');
+                        consultationWrapper.classList.add('hidden-sm');
+                        consultationWrapper.classList.add('hidden-xs');
                     }
+                    statusMessage.style.textAlign = 'center';
                     statusMessage.innerHTML = message.success;  
                     
                 })
@@ -57,6 +75,7 @@ function modalForm() {
 
     sendDesignForm(popupConsultationForm, afterConsultationModal, headerConsultationModal, inputsConsultationModal);
     sendDesignForm(popupDesignForm, afterDesignModal, headerDesignModal, inputsDesignModal);
+    sendDesignForm(consultationForm, afterconsultationSection, consultationHeader, consultationParagraph);
 
     //Только цифры и знак +
     function numbers(value) {
