@@ -19,218 +19,100 @@ function calc() {
         material = document.getElementById('material'),
         options = document.getElementById('options'),
         promocode = document.querySelector('.promocode'),
-
         finalPrice = document.querySelector('.calc-price'),
-        buttonCalcPrice = document.querySelector('#price');
     
-    let currentSizeSelect = size.selectedIndex;
-    let curentMaterialSelect = material.selectedIndex;
-    let curentOptionsSelect = options.selectedIndex;
+        currentSizeSelect = size.selectedIndex,
+        curentMaterialSelect = material.selectedIndex,
+        curentOptionsSelect = options.selectedIndex,
+        promoInput = promocode.value;
 
     size.addEventListener('click', ()=> {
-        currentSizeSelect = size.selectedIndex;//size.options[size.selectedIndex];
-        sizeSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect); 
+        currentSizeSelect = size.selectedIndex;
+        allSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect, promoInput); 
     });
 
     material.addEventListener('click', ()=> { 
         curentMaterialSelect = material.selectedIndex;
-        sizeSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect);
+        allSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect, promoInput);
     });
 
     options.addEventListener('click', ()=> { 
         curentOptionsSelect = options.selectedIndex;
-        sizeSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect);
+        allSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect, promoInput);
     });
 
-//IWANTPOPART
-    function sizeSelect(selected1, selected2, selected3) {
-        console.log(`${currentSizeSelect} ${curentMaterialSelect} ${curentOptionsSelect} ${promocode.value}`);
-        //------------------------------------------------------------------------
-        if ((selected1 == 0 && selected2 == 0 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 0 && selected2 != 0 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 != 0 && selected2 == 0 && selected3 == 0 && promocode.value == 'IWANTPOPART') ) {
-            finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины'; 
-            console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 0 && selected2 == 0 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 0 && selected2 != 0 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 != 0 && selected2 == 0 && selected3 == 1 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';     
-            console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 0 && selected2 == 0 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 0 && selected2 != 0 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 != 0 && selected2 == 0 && selected3 == 2 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины'; 
-            console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 0 && selected2 == 0 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 0 && selected2 != 0 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 != 0 && selected2 == 0 && selected3 == 3 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
-            console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-        }
-        //-------------------------------------------------------------------------
+    promocode.addEventListener('input', ()=> {
+        promoInput = promocode.value;
+        allSelect(currentSizeSelect, curentMaterialSelect, curentOptionsSelect, promoInput);
+    });
 
-        //-------------------------------------------------------------------------
-        if ((selected1 == 2 && selected2 == 1 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 2 && selected2 == 2 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 2 && selected2 == 3 && selected3 == 0 && promocode.value == 'IWANTPOPART')) { 
-            finalPrice.textContent = (picturePrice * 1.5 + materialPrice * selected2) * 0.7; 
-            console.log(`${picturePrice} * 1.5 + ${materialPrice} * ${selected2} = ${finalPrice.textContent}`);  
-        } else if ((selected1 == 2 && selected2 == 1 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 2 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 3 && selected3 == 1 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 1.5 + materialPrice * selected2 + artGel) * 0.7; 
-            console.log(`${picturePrice} * 1.5 + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 2 && selected2 == 1 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 2 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 3 && selected3 == 2 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 1.5 + materialPrice * selected2 + express) * 0.7; 
-            console.log(`${picturePrice} * 1.5 + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 2 && selected2 == 1 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 2 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 2 && selected2 == 3 && selected3 == 3 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 1.5 + materialPrice * selected2 + delivery) * 0.7;
-            console.log(`${picturePrice} * 1.5 + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-        }
-        //-------------------------------------------------------------------------
-        if ((selected1 == 3 && selected2 == 1 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 3 && selected2 == 2 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 3 && selected2 == 3 && selected3 == 0 && promocode.value == 'IWANTPOPART')) { 
-            finalPrice.textContent = (picturePrice * 2 + materialPrice * selected2) * 0.7; 
-            console.log(`${picturePrice} * 2 + ${materialPrice} * ${selected2} = ${finalPrice.textContent}`);   
-        } else if ((selected1 == 3 && selected2 == 1 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 2 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 3 && selected3 == 1 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2 + materialPrice * selected2 + artGel) * 0.7; 
-            console.log(`${picturePrice} * 2 + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 3 && selected2 == 1 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 2 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 3 && selected3 == 2 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2 + materialPrice * selected2 + express) * 0.7; 
-            console.log(`${picturePrice} * 2 + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 3 && selected2 == 1 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 2 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 3 && selected2 == 3 && selected3 == 3 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2 + materialPrice * selected2 + delivery) * 0.7; 
-            console.log(`${picturePrice} * 2 + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-        }
-        //-------------------------------------------------------------------------
-        if ((selected1 == 4 && selected2 == 1 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 4 && selected2 == 2 && selected3 == 0 && promocode.value == 'IWANTPOPART') ||
-            (selected1 == 4 && selected2 == 3 && selected3 == 0 && promocode.value == 'IWANTPOPART')) { 
-            finalPrice.textContent = (picturePrice * 2.5 + materialPrice * selected2) * 0.7; 
-            console.log(`${picturePrice} * 2.5 + ${materialPrice} * ${selected2} = ${finalPrice.textContent}`);              
-        } else if ((selected1 == 4 && selected2 == 1 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 2 && selected3 == 1 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 3 && selected3 == 1 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2.5 + materialPrice * selected2 + artGel) * 0.7; 
-            console.log(`${picturePrice} * 2.5 + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 4 && selected2 == 1 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 2 && selected3 == 2 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 3 && selected3 == 2 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2.5 + materialPrice * selected2 + express) * 0.7; 
-            console.log(`${picturePrice} * 2.5 + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-        } else if ((selected1 == 4 && selected2 == 1 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 2 && selected3 == 3 && promocode.value == 'IWANTPOPART') ||
-                   (selected1 == 4 && selected2 == 3 && selected3 == 3 && promocode.value == 'IWANTPOPART')) {
-            finalPrice.textContent = (picturePrice * 2.5 + materialPrice * selected2 + delivery) * 0.7; 
-            console.log(`${picturePrice} * 2.5 + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-        }
-        //-------------------------------------------------------------------------
+    //IWANTPOPART
+    function allSelect(selected1, selected2, selected3, iputValue) {
+        console.log(`${currentSizeSelect} ${curentMaterialSelect} ${curentOptionsSelect} ${iputValue}`);
+        sizeSelected();
 
-        if (selected1 == 1) {
-            if ( selected2 == 1) {
-                if (selected3 == 0) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${selected3}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 1) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + artGel;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + artGel) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${artGel}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 2) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + express; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + express) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${express}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 3) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + delivery; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + delivery) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${delivery}) * 0.7 = ${finalPrice.textContent}`);
-                    }
+        function optionSelect(option, additionalOption, promo, sizeValue) {
+            if((sizeValue == 0 && selected2 == 0) || (sizeValue !=0 && selected2 == 0) || (sizeValue ==0 && selected2 != 0)) {
+                finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+                if(promo == 'IWANTPOPART') {
+                    finalPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
                 }
-            } else if (selected2 == 2) {
-                if (selected3 == 0) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + selected3) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 1) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + artGel;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + artGel) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${artGel}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 2) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + express; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + express) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${express}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 3) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + delivery; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + delivery) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${delivery}) * 0.7 = ${finalPrice.textContent}`);
-                    }
+            } else if(option == 0) {   
+                if(promo == 'IWANTPOPART') {
+                    finalPrice.textContent = Math.round((picturePrice * sizeValue + materialPrice * selected2) * 0.7);
+                    console.log(`(${picturePrice} * ${sizeValue} + ${materialPrice} * ${selected2} + ${selected3}) * 0.7 = ${finalPrice.textContent}`);
+                } else {
+                    finalPrice.textContent = picturePrice * sizeValue + materialPrice * selected2;
+                    console.log(`${picturePrice} * ${sizeValue} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
                 }
-            } else if (selected2 == 3) {
-                if (selected3 == 0) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${selected3} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + selected3) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${selected3}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 1) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + artGel;
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${artGel} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + artGel) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${artGel}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 2) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + express; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${express} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + express) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${express}) * 0.7 = ${finalPrice.textContent}`);
-                    }
-                } else if (selected3 == 3) {
-                    finalPrice.textContent = picturePrice + materialPrice * selected2 + delivery; 
-                    console.log(`${picturePrice} + ${materialPrice} * ${selected2} + ${delivery} = ${finalPrice.textContent}`);
-                    if(promocode.value == 'IWANTPOPART') {
-                        finalPrice.textContent = (picturePrice + materialPrice * selected2 + delivery) * 0.7;
-                        console.log(`(${picturePrice} + ${materialPrice} * ${selected2} + ${delivery}) * 0.7 = ${finalPrice.textContent}`);
-                    }
+            } else {
+                if(promo == 'IWANTPOPART') {
+                    finalPrice.textContent = Math.round((picturePrice * sizeValue + materialPrice * selected2 + additionalOption) * 0.7);
+                    console.log(`(${picturePrice} * ${sizeValue} + ${materialPrice} * ${selected2} + ${additionalOption}) * 0.7 = ${finalPrice.textContent}`);
+                } else {
+                    finalPrice.textContent = picturePrice * sizeValue + materialPrice * selected2 + additionalOption;
+                    console.log(`${picturePrice} * ${sizeValue} + ${materialPrice} * ${selected2} + ${additionalOption} = ${finalPrice.textContent}`);
                 }
             }
+            
         }
-        //-----------------------------------------------------------------------------------------------
+
+        function switchSelect(value) {
+            switch (selected3) {
+                case 1:
+                    optionSelect(selected3, artGel, iputValue, value);
+                    break;
+                case 2:
+                    optionSelect(selected3, express, iputValue, value);
+                    break;
+                case 3:
+                    optionSelect(selected3, delivery, iputValue, value);
+                    break; 
+                default:
+                    optionSelect(selected3, 0, iputValue, value);
+                    break;
+            }
+        }
+
+        function materialSelected(value) {
+            if (selected2 == 1) {
+                switchSelect(value);
+            } else if (selected2 == 2) {
+                switchSelect(value);
+            } else if (selected2 == 3) {
+                switchSelect(value);
+            } else if (selected2 == 0) {
+                switchSelect(value);
+            }
+        }
+
+        function sizeSelected () {
+            if (selected1 == 0) {
+                materialSelected(size.options[size.selectedIndex].value);
+            } else {
+                materialSelected(size.options[size.selectedIndex].value);
+            }
+        }
     }
 }
 
