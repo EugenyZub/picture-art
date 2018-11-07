@@ -11,7 +11,7 @@ function modalForm() {
         emailToDesign = document.getElementById('design-email'),     //поле 'email' в модальной форме popup-design 
         popupConsultationForm = document.querySelector('.popup-consultation form'),
         nameToConsultation = popupConsultationForm.querySelector('#consultation-name'),
-        phoneToConsultation = popupConsultationForm.querySelector('#consultation-phone'),
+        //phoneToConsultation = popupConsultationForm.querySelector('#consultation-phone'),
         textareaDisign = document.getElementById('textarea'),
         statusMessage = document.createElement('div'),
         btn = document.createElement('button');
@@ -52,9 +52,10 @@ function modalForm() {
     btn.classList.add('hidden-sm');
     btn.classList.add('hidden-xs');
     btn.textContent = 'Ещё вопросы?';
+   
 
     numbers(phoneToDesign);
-    numbers(phoneToConsultation);
+    numbers(consultPhone);
     numbers(consultationPhone);
 
     russianLetters(nameToDesign);
@@ -64,12 +65,12 @@ function modalForm() {
     russianLetters(consultationQuestion);
 
     function sendDesignForm(elem, modalWindow, modalHeader, modalInputs) {
-        if (elem == popupConsultationForm || elem == popupDesignForm) {
-            modalWindow.appendChild(statusMessage);
-        } else if (elem == consultationForm){
-            modalWindow.appendChild(btn);
-            modalWindow.insertBefore(statusMessage, btn);
-        }
+        // if (elem == popupConsultationForm || elem == popupDesignForm) {
+        //     modalWindow.appendChild(statusMessage);
+        // } else if (elem == consultationForm){
+        //     modalWindow.appendChild(btn);
+        //     modalWindow.insertBefore(statusMessage, btn);
+        // }
         elem.addEventListener('submit', function (e) {
             e.preventDefault();
             let contactFormData = new FormData(elem);
@@ -209,21 +210,26 @@ function modalForm() {
     }
 
     function returnForms(elem, modalWindow, modalHeader, modalInputs) {     
-        modalWindow.removeChild(statusMessage);
+        modalWindow.appendChild(statusMessage);
+        //modalWindow.removeChild(statusMessage); 
+        
         //console.log(1);
         if (elem == popupConsultationForm) {
             modalInputs.style.display = 'block';
             modalHeader.style.display = 'block';
+            modalWindow.removeChild(statusMessage);
         } else if (elem == popupDesignForm) {
             modalInputs.style.display = 'block';
             modalHeader.style.display = 'block';
             uploadDesignModal.style.display = 'block';
+            modalWindow.removeChild(statusMessage);
         } else if (elem == consultationForm) {
             modalHeader.style.display = 'block';
             modalInputs.style.display = 'block';
             consultationWrapper.classList.remove('hidden-lg');
             consultationWrapper.classList.remove('hidden-sm');
             consultationWrapper.classList.remove('hidden-xs');
+           modalWindow.removeChild(statusMessage);
         }
     } 
 }   
