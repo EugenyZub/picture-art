@@ -600,12 +600,13 @@
 					<div class=input-wrapper>
 						<input id="consult-name" type=text name=name placeholder="Ваше имя" required>
 						<input id="consult-phone" type=text name=phone placeholder="Ваш телефон" required maxlength="13">
-						<input type=text name=email placeholder="Ваш E-mail">
-						<input class=input-text name=message type=text placeholder="Задайте ваш вопрос здесь" required>
+						<input id="consult-email" type=text name=email placeholder="Ваш E-mail">
+						<input id=consult-text class=input-text name=message type=text placeholder="Задайте ваш вопрос здесь" required>
 					</div>
 					<button class="button button-order" return true;>Получить консультацию</button>
 				</form>
 			</div>
+			<!-- <button id=questions class="button button-order hidden-lg hidden-md hidden-sm hidden-xs" return true;>Ещё вопросы?</button> -->
 		</div>
 	</section>
 	<footer class=footer id=footer>
@@ -699,7 +700,7 @@
 						<div class=form>
 							<input id="design-name" type=text name=name placeholder="Ваше имя" required>
 							<input id="design-phone" type=text name=phone placeholder="Ваш телефон" required maxlength="13">
-							<input id="email" type=text name=email placeholder="Ваш e-mail">
+							<input id="design-email" type=text name=email placeholder="Ваш e-mail">
 							<textarea id="textarea" name=message placeholder=Комментарий rows=2></textarea>
 							<button class="button button-order">Отправить дизайнеру</button>
 						</div>
