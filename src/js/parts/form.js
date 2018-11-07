@@ -94,6 +94,7 @@ function modalForm() {
                         modalHeader.style.display = 'none';
                         modalInputs.style.display = 'none';
                         consultationWrapper.classList.add('hidden-lg');
+                        consultationWrapper.classList.add('hidden-md');
                         consultationWrapper.classList.add('hidden-sm');
                         consultationWrapper.classList.add('hidden-xs');
                         btn.classList.remove('hidden-lg');
@@ -229,7 +230,7 @@ function modalForm() {
             consultationWrapper.classList.remove('hidden-lg');
             consultationWrapper.classList.remove('hidden-sm');
             consultationWrapper.classList.remove('hidden-xs');
-           modalWindow.removeChild(statusMessage);
+            modalWindow.removeChild(statusMessage);
         }
     } 
 }   
